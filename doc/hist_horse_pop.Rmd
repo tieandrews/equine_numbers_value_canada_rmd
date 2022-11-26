@@ -1,11 +1,12 @@
 ---
 title: "Historical horse population in Canada"
 output: 
+  html_document:
+    toc: true
   github_document:
-      toc: yes
-      toc_depth: '4'
+    toc: true
 params: 
-	province: "Alberta"
+  province: "Alberta"
 ---
 
 ```{r setup, include=FALSE}
@@ -66,7 +67,7 @@ max_horses <- horse_pop %>%
 kable(max_horses, caption="Table 1: Horse population per province.")
 ```
 
-Below we zoom in and look at the province of Alberta:
+Below we zoom in and look at the province of `r params$province`:
 
 ```{r plot province, fig.width=5, fig.height=4}
 province_plot <- horse_pop %>% 
